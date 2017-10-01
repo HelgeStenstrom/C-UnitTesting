@@ -10,7 +10,7 @@
 // TODO Report collected results
 
 
-namespace UnitTestingz
+namespace UnitTesting
 {
     internal class Program
     {
@@ -29,7 +29,7 @@ namespace UnitTestingz
         {
             WasRun test = new WasRun("testMethod");
             Console.WriteLine(test.wasRun);
-            test.testMethod();
+            test.run();
             Console.WriteLine(test.wasRun);
         }
     }

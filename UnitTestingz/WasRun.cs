@@ -1,13 +1,21 @@
-﻿namespace UnitTestingz
+﻿namespace UnitTesting
 {
     public class WasRun
     {
-        public bool wasRun = false;
+        public bool wasRun;
+        public string name;
         public WasRun(string name)
         {
+            wasRun = false;
+            this.name = name;
         }
 
-        public void testMethod()
+        public void run()
+        {
+            testMethod();
+        }
+
+        void testMethod()
         {
             wasRun = true;
         }
