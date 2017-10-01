@@ -1,4 +1,7 @@
-﻿namespace UnitTesting
+﻿using System;
+using System.Reflection;
+
+namespace UnitTesting
 {
     public class WasRun
     {
@@ -12,10 +15,14 @@
 
         public void run()
         {
-            testMethod();
+            // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
+            Console.WriteLine("Trying to call '{0}'.", name);
+            Type thisType = this.GetType();
+            MethodInfo theMethod = thisType.GetMethod(name);
+            theMethod.Invoke(this, null);
         }
 
-        void testMethod()
+        public void testMethod()
         {
             wasRun = true;
         }
