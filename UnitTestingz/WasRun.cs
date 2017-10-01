@@ -3,23 +3,11 @@ using System.Reflection;
 
 namespace UnitTesting
 {
-    public class WasRun
+    public class WasRun : TestCase
     {
-        public bool wasRun;
-        public string name;
-        public WasRun(string name)
+        public WasRun(string name) : base(name)
         {
             wasRun = false;
-            this.name = name;
-        }
-
-        public void run()
-        {
-            // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
-            Console.WriteLine("Trying to call '{0}'.", name);
-            Type thisType = this.GetType();
-            MethodInfo theMethod = thisType.GetMethod(name);
-            theMethod.Invoke(this, null);
         }
 
         public void testMethod()
@@ -27,4 +15,21 @@ namespace UnitTesting
             wasRun = true;
         }
     }
+
+    public class TestCaseTest : TestCase
+    {
+        public TestCaseTest(string name) : base(name)
+        {
+        }
+
+        public void TestRunning()
+        {
+            TestCase test = new WasRun("testMethod");
+            AssertThat(! test.wasRun, "Test seemed to be run before it could have been.");
+            test.run();
+            AssertThat(test.wasRun, "Test wasn't run");
+            Console.WriteLine("TestRunning har körts.");
+        }
+    }
+        
 }

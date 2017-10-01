@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.Odbc;
+using System.Diagnostics;
+
 //using System.Collections.Generic;
 //using System.Runtime.InteropServices;
 
@@ -21,16 +24,9 @@ namespace UnitTesting
 
         static void RunTests()
         {
-            // Console.WriteLine("Kör tester");
-            InvokeTestMethod();
+            new TestCaseTest("TestRunning").run();
+            Console.WriteLine("All tests done successfully.");
         }
 
-        static void InvokeTestMethod()
-        {
-            WasRun test = new WasRun("testMethod");
-            Console.WriteLine(test.wasRun);
-            test.run();
-            Console.WriteLine(test.wasRun);
-        }
     }
 }
