@@ -5,6 +5,7 @@ namespace UnitTesting
 {
     public class WasRun : TestCase
     {
+        public bool wasSetUp = false;
         public WasRun(string name) : base(name)
         {
             wasRun = false;
@@ -29,6 +30,13 @@ namespace UnitTesting
             test.run();
             AssertThat(test.wasRun, "Test wasn't run");
             Console.WriteLine("TestRunning har körts.");
+        }
+
+        public void testSetup()
+        {
+            WasRun test = new WasRun("testMethod");
+            test.run();
+            AssertThat(test.wasSetUp, "Test wasn't set up properly");
         }
     }
         
