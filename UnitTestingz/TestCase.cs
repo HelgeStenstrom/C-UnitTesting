@@ -7,6 +7,7 @@ namespace UnitTesting
     {
         public string name;
         public bool wasRun;
+        public bool wasSetUp;
 
         public TestCase(string name)
         {
@@ -17,11 +18,20 @@ namespace UnitTesting
         public void run()
         {
             // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
-            // Console.WriteLine("Calling '{0}'.", name);
+            
+            this.setUp();
+
+            runMethod();
+        }
+
+        private void runMethod()
+        {
             Type thisType = this.GetType();
             MethodInfo theMethod = thisType.GetMethod(name);
             theMethod.Invoke(this, null);
         }
+
+        public void setUp() {}
         
         public static void AssertThat(bool b, string explanation)
         {
