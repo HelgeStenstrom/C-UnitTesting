@@ -20,7 +20,12 @@ namespace UnitTestingz
             WasRun test = new WasRun("TestMethod");
             test.Run();
             if (! test.WasSetUp) Console.WriteLine("Rätt SetUp kördes inte.");
-            //AssertThat(test.WasSetUp, "No setUp in WasRun");
+            AssertThat(test.WasSetUp, "No setUp in WasRun");
+        }
+
+        public override void SetUp()
+        {
+            // Console.WriteLine("SetUp in TestCaseTest");
         }
     }
 }

@@ -12,7 +12,7 @@
             WasRun = true;
         }
 
-        public new  void SetUp()
+        public override void SetUp()
         {
             WasSetUp = true;
         }

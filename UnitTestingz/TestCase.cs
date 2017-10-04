@@ -31,7 +31,8 @@ namespace UnitTestingz
             theMethod.Invoke(this, null);
         }
 
-        public void SetUp() {}
+        public virtual void SetUp() {}
+        public virtual void TearDown() {}
         
         public static void AssertThat(bool b, string explanation)
         {

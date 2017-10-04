@@ -4,7 +4,7 @@
 //using System.Runtime.InteropServices;
 
 // Done: Invoke test method
-// TODO: Invoke setUp first
+// Done: Invoke setUp first
 // TODO: Invoke tearDown afterward
 // TODO: Invoke tearDown even if the test method fails
 // TODO: Run multiple tests
