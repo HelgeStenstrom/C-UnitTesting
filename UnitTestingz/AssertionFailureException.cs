@@ -8,13 +8,7 @@ namespace UnitTestingz
         
         public AssertionFailureException(String s) : base(s) {}
 
-        public static int Xxx()
-        {
-            // new Exception().ToString()
-            return 17;
-        }
-
-        public new string  ToString()
+        public override string  ToString()
         {
             return Message;
         }

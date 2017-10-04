@@ -41,8 +41,7 @@ namespace UnitTestingz
 
         public static void AssertEqual(string a, string b, string explanation)
         {
-            AssertThat(a==b, String.Format("'{0}' != '{1}'. {2}.", a, b, explanation));
+            AssertThat(a==b, $"'{a}' != '{b}'. {explanation}.");
         }
- 
     }
 }
