@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     public class AssertionFailureException : Exception
     {

@@ -14,7 +14,7 @@ using System.Runtime.Remoting.Channels;
 // TODO: Report collected results
 
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     internal class Program
     {
@@ -25,8 +25,8 @@ namespace UnitTesting
 
         static void RunTests()
         {
-            new TestCaseTest("TestRunning").run();
-            new TestCaseTest("TestSetup").run();
+            new TestCaseTest("TestRunning").Run();
+            new TestCaseTest("TestSetup").Run();
             
             Console.WriteLine("All tests done successfully.");
             // throw new Exception("ett undantag");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     public class TestCase
     {
@@ -15,23 +15,23 @@ namespace UnitTesting
             wasRun = false;
         }
 
-        public void run()
+        public void Run()
         {
             // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
             
-            this.setUp();
+            this.SetUp();
 
-            runMethod();
+            RunMethod();
         }
 
-        private void runMethod()
+        private void RunMethod()
         {
             Type thisType = this.GetType();
             MethodInfo theMethod = thisType.GetMethod(name);
             theMethod.Invoke(this, null);
         }
 
-        public void setUp() {}
+        public void SetUp() {}
         
         public static void AssertThat(bool b, string explanation)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     public class WasRun : TestCase
     {
@@ -10,12 +10,12 @@ namespace UnitTesting
             wasSetUp = false;
         }
 
-        public void testMethod()
+        public void TestMethod()
         {
             wasRun = true;
         }
 
-        public void setUp()
+        public void SetUp()
         {
             wasSetUp = true;
         }
@@ -27,17 +27,17 @@ namespace UnitTesting
 
         public void TestRunning()
         {
-            TestCase test = new WasRun("testMethod");
+            TestCase test = new WasRun("TestMethod");
             AssertThat(! test.wasRun, "Test seemed to be run before it could have been.");
-            test.run();
+            test.Run();
             AssertThat(test.wasRun, "Test testMethod wasn't run");
             Console.WriteLine("TestRunning har körts.");
         }
 
         public void TestSetup()
         {
-            WasRun test = new WasRun("testMethod");
-            test.run();
+            WasRun test = new WasRun("TestMethod");
+            test.Run();
             AssertThat(test.wasSetUp, "No setUp in WasRun");
         }
     }
