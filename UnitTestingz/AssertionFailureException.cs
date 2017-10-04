@@ -4,7 +4,7 @@ namespace UnitTestingz
 {
     public class AssertionFailureException : Exception
     {
-        public AssertionFailureException() : base() {}
+        public AssertionFailureException()  {}
         
         public AssertionFailureException(String s) : base(s) {}
 

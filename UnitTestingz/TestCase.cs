@@ -12,13 +12,18 @@ namespace UnitTestingz
             Name = name;
         }
 
-        public void Run()
+        public TestResult Run()
         {
+            TestResult result = new TestResult();
+            result.TestStarted();
+            
             SetUp();
 
             RunMethod();
             
             TearDown();
+
+            return result;
         }
 
         private void RunMethod()

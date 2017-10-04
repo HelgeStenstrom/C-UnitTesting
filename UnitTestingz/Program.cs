@@ -1,7 +1,5 @@
 ﻿using System;
 
-//using System.Collections.Generic;
-//using System.Runtime.InteropServices;
 
 // Done: Invoke test method
 // Done: Invoke setUp first
@@ -27,6 +25,8 @@ namespace UnitTestingz
         static void RunTests()
         {
             new TestCaseTest("TestTemplateMethod").Run();
+            new TestCaseTest("DoTestResult").Run();
+            // new TestCaseTest("DoTestFailedResult").Run();
             
             Console.WriteLine("All tests done successfully.");
             // throw new Exception("ett undantag");

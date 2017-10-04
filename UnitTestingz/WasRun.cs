@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace UnitTestingz
 {
     public class WasRun : TestCase
@@ -11,11 +10,6 @@ namespace UnitTestingz
             Log = "";
         }
 
-        public void TestMethod()
-        {
-            Log += "Run ";
-        }
-
         public override void SetUp()
         {
             Log += "SetUp ";
@@ -24,6 +18,16 @@ namespace UnitTestingz
         public override void TearDown()
         {
             Log += "TearDown ";
+        }
+
+        public void TestMethod()
+        {
+            Log += "Run ";
+        }
+
+        public void TestBrokenMethod()
+        {
+            throw new AssertionFailureException("A fail fail that is expected and needed for the test.");
         }
         
     }
