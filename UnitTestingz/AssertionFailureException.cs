@@ -10,10 +10,11 @@ namespace UnitTestingz
 
         public static int Xxx()
         {
+            // new Exception().ToString()
             return 17;
         }
 
-        public string ToString()
+        public new string  ToString()
         {
             return Message;
         }

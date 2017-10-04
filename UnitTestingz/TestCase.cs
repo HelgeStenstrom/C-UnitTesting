@@ -5,29 +5,29 @@ namespace UnitTestingz
 {
     public class TestCase
     {
-        public string name;
-        public bool wasRun;
-        public bool wasSetUp;
+        protected string Name;
+        public bool WasRun;
+        public bool WasSetUp;
 
         public TestCase(string name)
         {
-            this.name = name;
-            wasRun = false;
+            Name = name;
+            WasRun = false;
         }
 
         public void Run()
         {
             // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
             
-            this.SetUp();
+            SetUp();
 
             RunMethod();
         }
 
         private void RunMethod()
         {
-            Type thisType = this.GetType();
-            MethodInfo theMethod = thisType.GetMethod(name);
+            Type thisType = GetType();
+            MethodInfo theMethod = thisType.GetMethod(Name);
             theMethod.Invoke(this, null);
         }
 
