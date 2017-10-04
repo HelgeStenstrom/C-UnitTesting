@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data.Odbc;
-using System.Diagnostics;
-using System.Runtime.Remoting.Channels;
 
 //using System.Collections.Generic;
 //using System.Runtime.InteropServices;
@@ -14,7 +11,7 @@ using System.Runtime.Remoting.Channels;
 // TODO: Report collected results
 
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     internal class Program
     {

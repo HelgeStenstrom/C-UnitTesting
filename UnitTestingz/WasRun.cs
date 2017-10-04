@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Reflection;
 
-namespace UnitTesting
+namespace UnitTestingz
 {
     public class WasRun : TestCase
     {
