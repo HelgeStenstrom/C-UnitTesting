@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data.Odbc;
-using System.Diagnostics;
-using System.Runtime.Remoting.Channels;
 
 //using System.Collections.Generic;
 //using System.Runtime.InteropServices;
