@@ -6,19 +6,17 @@
         
         public WasRun(string name) : base(name)
         {
-            WasSetUp = false;
+            Log = "";
         }
 
         public void TestMethod()
         {
-            WasRun = true;
-            // Log += "TestMethod ";
+            Log += "Run ";
         }
 
         public override void SetUp()
         {
-            WasSetUp = true;
-            Log = "SetUp ";
+            Log += "SetUp ";
         }
     }
 }

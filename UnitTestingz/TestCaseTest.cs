@@ -15,10 +15,8 @@ namespace UnitTestingz
 
         public void TestRunning()
         {
-            AssertThat(! _test.WasRun, "Test seemed to be run before it could have been run.");
             _test.Run();
-            // AssertEqual("SetUp Run ", _test.Log, "Test testMethod wasn't run");
-            AssertThat(_test.WasRun, "Test testMethod wasn't run");
+            AssertEqual("SetUp Run ", _test.Log, "SetUp och Run skedde inte");
             Console.WriteLine("TestRunning har körts.");
         }
 
@@ -26,8 +24,8 @@ namespace UnitTestingz
         // page 201
         {
             _test.Run();
-            AssertThat("SetUp ".Equals(_test.Log), "Log kördes inte");
-            AssertEqual("SetUp ", _test.Log, "SetUp skedde inte");
+            AssertEqual("SetUp Run ", _test.Log, "SetUp skedde inte");
+            Console.WriteLine("TestSetup har körts.");
         }
 
         // public void Test

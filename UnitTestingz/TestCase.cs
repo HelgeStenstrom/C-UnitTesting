@@ -6,13 +6,10 @@ namespace UnitTestingz
     public class TestCase
     {
         protected string Name;
-        public bool WasRun;
-        public bool WasSetUp;
 
         public TestCase(string name)
         {
             Name = name;
-            WasRun = false;
         }
 
         public void Run()
