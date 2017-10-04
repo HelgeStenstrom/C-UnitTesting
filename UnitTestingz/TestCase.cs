@@ -19,7 +19,18 @@ namespace UnitTestingz
             
             SetUp();
 
-            RunMethod();
+            try
+            {
+                RunMethod();
+            }
+            catch (Exception e)
+            {
+                // e.HelpLink
+                Console.WriteLine(e.HelpLink);
+                result.TestFailed();
+                // throw;
+            }
+
             
             TearDown();
 

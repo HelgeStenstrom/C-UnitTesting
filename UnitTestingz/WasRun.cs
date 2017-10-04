@@ -27,7 +27,7 @@ namespace UnitTestingz
 
         public void TestBrokenMethod()
         {
-            throw new AssertionFailureException("A fail fail that is expected and needed for the test.");
+            throw new AssertionFailureException("*** A fail that is expected and needed for the test ***");
         }
         
     }

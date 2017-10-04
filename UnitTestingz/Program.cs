@@ -8,7 +8,7 @@
 // TODO: Run multiple tests
 // TODO: Report collected results
 // Done: Log string in WasRun
-// TODO: Report failed tests
+// Done: Report failed tests
 // TODO: Catch and report setUp errors
 // TODO: Create TestSuite from a TestCase class
 
@@ -26,7 +26,7 @@ namespace UnitTestingz
         {
             new TestCaseTest("TestTemplateMethod").Run();
             new TestCaseTest("DoTestResult").Run();
-            // new TestCaseTest("DoTestFailedResult").Run();
+            new TestCaseTest("DoTestFailedResult").Run();
             
             Console.WriteLine("All tests done successfully.");
             // throw new Exception("ett undantag");
