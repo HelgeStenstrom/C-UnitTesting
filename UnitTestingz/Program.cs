@@ -9,6 +9,10 @@
 // TODO: Invoke tearDown even if the test method fails
 // TODO: Run multiple tests
 // TODO: Report collected results
+// TODO: Log string in WasRun
+// TODO: Report failed tests
+// TODO: Catch and report setUp errors
+// TODO: Create TestSuite from a TestCase class
 
 
 namespace UnitTestingz
