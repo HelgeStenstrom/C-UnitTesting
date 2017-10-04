@@ -1,4 +1,6 @@
-﻿namespace UnitTestingz
+﻿using System;
+
+namespace UnitTestingz
 {
     public class WasRun : TestCase
     {
@@ -18,5 +20,11 @@
         {
             Log += "SetUp ";
         }
+
+        public override void TearDown()
+        {
+            Log += "TearDown ";
+        }
+        
     }
 }

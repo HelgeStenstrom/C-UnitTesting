@@ -11,7 +11,7 @@ namespace UnitTestingz
         {
             WasRun test = new WasRun("TestMethod");
             test.Run();
-            AssertEqual("SetUp Run ", test.Log, "SetUp Run skedde inte");
+            AssertEqual("SetUp Run TearDown ", test.Log, "SetUp Run TearDown skedde inte");
             // Console.WriteLine("TestSetup har körts.");
         }
 

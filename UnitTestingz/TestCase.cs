@@ -17,6 +17,8 @@ namespace UnitTestingz
             SetUp();
 
             RunMethod();
+            
+            TearDown();
         }
 
         private void RunMethod()

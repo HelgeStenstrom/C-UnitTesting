@@ -5,7 +5,7 @@
 
 // Done: Invoke test method
 // Done: Invoke setUp first
-// TODO: Invoke tearDown afterward
+// Done: Invoke tearDown afterward
 // TODO: Invoke tearDown even if the test method fails
 // TODO: Run multiple tests
 // TODO: Report collected results
