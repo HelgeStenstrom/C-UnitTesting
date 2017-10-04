@@ -17,8 +17,6 @@ namespace UnitTestingz
 
         public void Run()
         {
-            // Call by ref taken from https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
-            
             SetUp();
 
             RunMethod();
@@ -26,6 +24,9 @@ namespace UnitTestingz
 
         private void RunMethod()
         {
+            // Call by ref taken from 
+            // https://stackoverflow.com/questions/540066/calling-a-function-from-a-string-in-c-sharp
+            
             Type thisType = GetType();
             MethodInfo theMethod = thisType.GetMethod(Name);
             theMethod.Invoke(this, null);
@@ -36,10 +37,14 @@ namespace UnitTestingz
         
         public static void AssertThat(bool b, string explanation)
         {
-            if (!b)
-            {
-                throw new Exception(explanation);
-            }
+            if (b) return;
+            Console.WriteLine("Exception: {0}", explanation);
+            // throw new AssertionFailureException(explanation);
+        }
+
+        public static void AssertEqual(string a, string b, string explanation)
+        {
+            AssertThat(a==b, String.Format("'{0}' != '{1}'. {2}.", a, b, explanation));
         }
  
     }
