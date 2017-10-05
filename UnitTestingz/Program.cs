@@ -5,7 +5,7 @@
 // Done: Invoke setUp first
 // Done: Invoke tearDown afterward
 // TODO: Invoke tearDown even if the test method fails
-// TODO: Run multiple tests
+// Done: Run multiple tests
 // Done: Report collected results
 // Done: Log string in WasRun
 // Done: Report failed tests

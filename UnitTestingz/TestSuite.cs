@@ -15,7 +15,10 @@ namespace UnitTestingz
 
         public void Run(TestResult result)
         {
-        
+            foreach (var test in _tests)
+            {
+                test.Run(result);
+            }
         }
     }
 }
