@@ -12,9 +12,9 @@ namespace UnitTestingz
             Name = name;
         }
 
-        public TestResult Run()
+        public void Run(TestResult result)
         {
-            TestResult result = new TestResult();
+            //TestResult result = new TestResult();
             result.TestStarted();
             
             SetUp();
@@ -34,7 +34,7 @@ namespace UnitTestingz
             
             TearDown();
 
-            return result;
+            //return result;
         }
 
         private void RunMethod()

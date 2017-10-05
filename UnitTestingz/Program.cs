@@ -6,7 +6,7 @@
 // Done: Invoke tearDown afterward
 // TODO: Invoke tearDown even if the test method fails
 // TODO: Run multiple tests
-// TODO: Report collected results
+// Done: Report collected results
 // Done: Log string in WasRun
 // Done: Report failed tests
 // TODO: Catch and report setUp errors
@@ -24,9 +24,11 @@ namespace UnitTestingz
 
         static void RunTests()
         {
-            new TestCaseTest("TestTemplateMethod").Run();
-            new TestCaseTest("DoTestResult").Run();
-            new TestCaseTest("DoTestFailedResult").Run();
+            TestResult result = new TestResult();
+            new TestCaseTest("TestTemplateMethod").Run(result);
+            new TestCaseTest("TestTestResult").Run(result);
+            new TestCaseTest("TestTestFailedResult").Run(result);
+            new TestCaseTest("TestTestSuite").Run(result);
             
             Console.WriteLine("All tests done successfully.");
             // throw new Exception("ett undantag");
