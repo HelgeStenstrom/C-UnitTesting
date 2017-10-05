@@ -1,4 +1,6 @@
-﻿namespace UnitTestingz
+﻿using System;
+
+namespace UnitTestingz
 {
     public class TestResult
     {
@@ -17,7 +19,7 @@
 
         public string Summary()
         {
-            return $"{_runCount} run, {_errorCount} failed";
+            return string.Format("{0} run, {1} failed", _runCount, _errorCount);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace UnitTestingz
     {
         public AssertionFailureException()  {}
         
-        public AssertionFailureException(String s) : base(s) {}
+        public AssertionFailureException(string s) : base(s) {}
 
         public override string  ToString()
         {
