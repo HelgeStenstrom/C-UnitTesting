@@ -54,7 +54,7 @@ namespace UnitTestingz
         {
             if (b) return;
             Console.WriteLine("Exception: {0}", explanation);
-            // throw new AssertionFailureException(explanation);
+            throw new AssertionFailureException(explanation);
         }
 
         public static void AssertEqual(string a, string b, string explanation)
