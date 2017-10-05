@@ -1,5 +1,5 @@
 ﻿
-namespace UnitTestingz
+namespace UnitTesting
 {
     public class WasRun : TestCase
     {

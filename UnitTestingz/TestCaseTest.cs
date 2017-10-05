@@ -1,8 +1,4 @@
-﻿
-using System;
-using System.Collections.Concurrent;
-
-namespace UnitTestingz
+﻿namespace UnitTesting
 {
     public class TestCaseTest : TestCase
     {
@@ -49,6 +45,5 @@ namespace UnitTestingz
             AssertEqual("2 run, 1 failed", result.Summary(), "fel i Suite-resultat");
         }
 
-        // public void Test
     }
 }

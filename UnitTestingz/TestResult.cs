@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UnitTestingz
+﻿namespace UnitTesting
 {
     public class TestResult
     {

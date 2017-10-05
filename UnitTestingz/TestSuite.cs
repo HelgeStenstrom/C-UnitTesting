@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Reflection.Emit;
 
-namespace UnitTestingz
+namespace UnitTesting
 {
     public class TestSuite
     {
-        private TestResult _result = new TestResult();
-        private List<TestCase> _tests = new List<TestCase>();
+        private readonly List<TestCase> _tests = new List<TestCase>();
         
         public void Add(TestCase test)
         {

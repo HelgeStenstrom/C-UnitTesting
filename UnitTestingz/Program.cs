@@ -13,7 +13,7 @@
 // TODO: Create TestSuite from a TestCase class
 
 
-namespace UnitTestingz
+namespace UnitTesting
 {
     internal class Program
     {

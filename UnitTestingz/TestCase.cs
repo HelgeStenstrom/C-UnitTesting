@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace UnitTestingz
+namespace UnitTesting
 {
     public class TestCase
     {
@@ -14,7 +14,6 @@ namespace UnitTestingz
 
         public void Run(TestResult result)
         {
-            //TestResult result = new TestResult();
             result.TestStarted();
             
             SetUp();
@@ -28,13 +27,9 @@ namespace UnitTestingz
                 // e.HelpLink
                 Console.WriteLine(e.HelpLink);
                 result.TestFailed();
-                // throw;
             }
 
-            
             TearDown();
-
-            //return result;
         }
 
         private void RunMethod()
