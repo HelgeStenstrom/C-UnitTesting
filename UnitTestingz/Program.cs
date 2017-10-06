@@ -20,6 +20,7 @@ namespace UnitTesting
             new TestCaseTest("TestTestResult").Run(result);
             new TestCaseTest("TestTestFailedResult").Run(result);
             new TestCaseTest("TestTestSuite").Run(result);
+            new TestCaseTest("TestErroredResult").Run(result);
             
             TestSuite formatting = new TestSuite();
             formatting.Add(new TestCaseTest("TestResultSummaryFormat"));

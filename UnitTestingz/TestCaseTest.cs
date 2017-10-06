@@ -45,7 +45,7 @@ namespace UnitTesting
         // page 106
         {
             WasRun test = new WasRun("TestMethod");
-            test.Run(this.result);
+            test.Run(result);
             //AssertEqual("1 run, 0 failed", result.Summary(), "Fel i resultat");
             AssertEqual(1, result.RunCount, "Fel antal körda test");
             AssertEqual(0, result.FailCount, "Fel antal Fails");
@@ -56,7 +56,7 @@ namespace UnitTesting
             // page 107
         {
             WasRun test = new WasRun("TestBrokenMethod");
-            test.Run(this.result);
+            test.Run(result);
             AssertEqual("FAILED (runs=1, failures=1, errors=0)", result.Summary(), "Fel i resultat");
             AssertEqual(1, result.RunCount, "Fel antal körda test");
             AssertEqual(1, result.FailCount, "Fel antal Fails");
@@ -68,7 +68,7 @@ namespace UnitTesting
             TestSuite suite = new TestSuite();
             suite.Add(new WasRun("TestMethod"));
             suite.Add(new WasRun("TestBrokenMethod"));
-            suite.Run(this.result);
+            suite.Run(result);
             AssertEqual("FAILED (runs=2, failures=1, errors=0)", result.Summary(), "fel i Suite-resultat");
             AssertEqual(2, result.RunCount, "Fel antal körda test");
             AssertEqual(1, result.FailCount, "Fel antal Fails");
@@ -79,27 +79,31 @@ namespace UnitTesting
 
         public void TestErroredResult()
         {
-            WasRun test = new WasRun("TestThrowingMethod");
-            test.Run(this.result);
+            WasRun test = new WasRun("ThrowingMethod");
+            test.Run(result);
             AssertEqual("FAILED (runs=1, failures=0, errors=1)", result.Summary(), "Fel antal fail eller error");
             AssertEqual(1, result.RunCount, "Fel antal körda test");
             AssertEqual(0, result.FailCount, "Fel antal Fails");
-            AssertEqual(1, result.ErrorCount, "Fel antal Error");
+            AssertEqual(1, result.ErrorCount, "Fel antal Error 87");
         }
 
         public void TestResultSummaryFormat()
         {
+            // Setup the SUT and DOCs.
             TestSuite suite = new TestSuite();
             suite.Add(new WasRun("TestMethod"));
             suite.Add(new WasRun("TestMethod"));
             suite.Add(new WasRun("TestMethod"));
             suite.Add(new WasRun("TestBrokenMethod"));
             suite.Add(new WasRun("TestBrokenMethod"));
-            suite.Add(new WasRun("TestThrowingMethod"));
+            suite.Add(new WasRun("ThrowingMethod"));
+            // Exercise the SUT
             suite.Run(this.result);
+            // Just an extra check.
             AssertEqual(6, result.RunCount, "Fel antal körda test");
             AssertEqual(2, result.FailCount, "Fel antal Fails");
-            AssertEqual(1, result.ErrorCount, "Fel antal Error");
+            AssertEqual(1, result.ErrorCount, "Fel antal Error 105");
+            // The actual purpose of the unit test.
             AssertEqual("FAILED (runs=6, failures=2, errors=1)", result.Summary(), "fel i Suite-resultat");
         }
 

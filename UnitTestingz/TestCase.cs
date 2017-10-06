@@ -27,16 +27,12 @@ namespace UnitTesting
             }
             catch (AssertionError ae)
             {
-                var text = string.Format("Assertion Error on line {0}, file {1},", 
-                    lineOf(ae), fileOf(ae));
+                var text = $"Assertion Error on line {LineOf(ae)}, file {FileOf(ae)},";
                 
-                //Console.WriteLine(text);
                 result.TestFailed();
             }
             catch (Exception e)
             {
-                //Console.WriteLine("Annat fel än Assertion.");
-                //Console.WriteLine("Line: " + lineOf(e));
                 result.TestErrored();
             }
 
@@ -56,7 +52,7 @@ namespace UnitTesting
             }
             catch (Exception e)
             {
-                throw e.InnerException;
+                if (e.InnerException != null) throw e.InnerException;
             }
         }
 
@@ -72,8 +68,8 @@ namespace UnitTesting
 
         public static void AssertEqual(string expected, string actual, string explanation)
         {
-            string exp = string.Format(" Expected {0} but got {1}", expected, actual);
-            AssertThat(expected==actual, string.Format("'{0}' != '{1}'. {2}.", expected, actual, explanation + exp));
+            string exp = $" Expected {expected} but got {actual}";
+            AssertThat(expected==actual, $"'{expected}' != '{actual}'. {explanation + exp}.");
         }
 
         public static void AssertEqual(int expected, int actual, string explanation)
@@ -92,30 +88,30 @@ namespace UnitTesting
            return new StackTrace(e, true).GetFrame(0);
         }
         
-        int lineOf (Exception ex)
+        int LineOf (Exception ex)
         {
             return frameOf(ex).GetFileLineNumber();
         }
 
-        string fileOf(Exception ex)
+        string FileOf(Exception ex)
         {
             return frameOf(ex).GetFileName();
         }
         
-        public int GetLineNumber(Exception ex)
-        {
-            var lineNumber = 0;
-            const string lineSearch = ":line ";
-            var index = ex.StackTrace.LastIndexOf(lineSearch);
-            if (index != -1)
-            {
-                var lineNumberText = ex.StackTrace.Substring(index + lineSearch.Length);
-                if (int.TryParse(lineNumberText, out lineNumber))
-                {
-                }
-            }
-            return lineNumber;
-        }
+//        public int GetLineNumber(Exception ex)
+//        {
+//            var lineNumber = 0;
+//            const string lineSearch = ":line ";
+//            var index = ex.StackTrace.LastIndexOf(lineSearch);
+//            if (index != -1)
+//            {
+//                var lineNumberText = ex.StackTrace.Substring(index + lineSearch.Length);
+//                if (int.TryParse(lineNumberText, out lineNumber))
+//                {
+//                }
+//            }
+//            return lineNumber;
+//        }
         
     }
 }
