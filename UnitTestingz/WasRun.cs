@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace UnitTesting
 {
     public class WasRun : TestCase
@@ -27,7 +29,12 @@ namespace UnitTesting
 
         public void TestBrokenMethod()
         {
-            throw new AssertionFailureException("*** A fail that is expected and needed for the test ***");
+            throw new AssertionError("*** A fail that is expected and needed for the test ***");
+        }
+
+        public void ThrowingMethod()
+        {
+            throw new Exception("An Exceoption that is worse than an assertion failure, but expected here.");
         }
         
     }
