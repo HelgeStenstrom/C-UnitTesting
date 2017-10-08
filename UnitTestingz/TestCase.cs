@@ -27,13 +27,11 @@ namespace UnitTesting
             }
             catch (AssertionError ae)
             {
-                var text = $"Assertion Error on line {LineOf(ae)}, file {FileOf(ae)},";
-                
-                result.TestFailed();
+                result.TestFailed(ae, this.Name);
             }
             catch (Exception e)
             {
-                result.TestErrored();
+                result.TestErrored(e);
             }
 
             TearDown();
@@ -52,7 +50,12 @@ namespace UnitTesting
             }
             catch (Exception e)
             {
-                if (e.InnerException != null) throw e.InnerException;
+                var st = new StackTrace(e, true);
+                if (e.InnerException != null)
+                {
+                    var stInner = new StackTrace(e.InnerException, true);
+                    throw e.InnerException;
+                }
             }
         }
 
@@ -62,7 +65,7 @@ namespace UnitTesting
         public static void AssertThat(bool b, string explanation)
         {
             if (b) return;
-            Console.WriteLine("Exception (undantag): {0}", explanation);
+            // Console.WriteLine("Exception (undantag): {0}", explanation);
             throw new AssertionError(explanation);
         }
 
@@ -83,20 +86,6 @@ namespace UnitTesting
             AssertThat(expected==actual, "");
         }
 
-        StackFrame frameOf(Exception e)
-        {
-           return new StackTrace(e, true).GetFrame(0);
-        }
-        
-        int LineOf (Exception ex)
-        {
-            return frameOf(ex).GetFileLineNumber();
-        }
-
-        string FileOf(Exception ex)
-        {
-            return frameOf(ex).GetFileName();
-        }
         
 //        public int GetLineNumber(Exception ex)
 //        {

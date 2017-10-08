@@ -17,6 +17,8 @@
 // TODO: Line numbers for fails and errors
 
 
+using System;
+
 namespace UnitTesting
 {
 
@@ -107,6 +109,11 @@ namespace UnitTesting
             AssertEqual("FAILED (runs=6, failures=2, errors=1)", result.Summary(), "fel i Suite-resultat");
         }
 
+        public void TestThatShouldFail()
+        {
+            AssertThat(false, "keep this failing!");
+            Console.WriteLine("This can't happen, because an exception is thown on the line above.");
+        }
 
     }
 }

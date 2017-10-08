@@ -21,11 +21,13 @@ namespace UnitTesting
             new TestCaseTest("TestTestFailedResult").Run(result);
             new TestCaseTest("TestTestSuite").Run(result);
             new TestCaseTest("TestErroredResult").Run(result);
+            new TestCaseTest("TestThatShouldFail").Run(result);
             
             TestSuite formatting = new TestSuite();
             formatting.Add(new TestCaseTest("TestResultSummaryFormat"));
             formatting.Run(result);
             
+            Console.Write(result.allFails());
             Console.WriteLine(result.Summary());
                 
             // ignore tills vidare
