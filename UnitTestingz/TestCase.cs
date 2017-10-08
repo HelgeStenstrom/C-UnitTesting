@@ -53,7 +53,8 @@ namespace UnitTesting
                 var st = new StackTrace(e, true);
                 if (e.InnerException != null)
                 {
-                    var stInner = new StackTrace(e.InnerException, true);
+                    var sdst = new StackTrace(e, true).ToString();
+                    var stInner = new StackTrace(e.InnerException, true).ToString();
                     throw e.InnerException;
                 }
             }
